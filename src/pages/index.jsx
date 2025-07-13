@@ -8,8 +8,8 @@ export default function Home() {
             <Head>
                 <title>Истории - Главная</title>
             </Head>
-            <h1 className="text-3xl font-bold mb-4">Добро пожаловать в мир историй</h1>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <h1 className="text-4xl font-bold mb-8 text-gray-900">Добро пожаловать в мир историй</h1>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {storiesData.map((story) => (
                     <StoryCard key={story.id} story={story} />
                 ))}

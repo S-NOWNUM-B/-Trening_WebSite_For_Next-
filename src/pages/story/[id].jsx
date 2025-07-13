@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import storiesData from '../../data/stories.json';
+import '../../styles/story.css';
 
 export default function Story() {
     const router = useRouter();
@@ -15,16 +17,16 @@ export default function Story() {
     }, [id]);
 
     if (!story) {
-        return <div className="container mx-auto p-4">История не найдена...</div>;
+        return <div className="container mx-auto p-4 text-gray-700">История не найдена...</div>;
     }
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-3xl font-bold mb-4">{story.title}</h1>
-            <p className="text-gray-700">{story.content || 'Содержимое истории отсутствует...'}</p>
-            <a href="/" className="text-blue-500 mt-4 inline-block">
+        <div className="story-page">
+            <h1 className="text-4xl font-bold mb-6 text-gray-900">{story.title}</h1>
+            <p className="text-gray-700 mb-6">{story.content || 'Содержимое истории отсутствует...'}</p>
+            <Link href="/" className="text-accent font-medium hover:underline">
                 Вернуться на главную
-            </a>
+            </Link>
         </div>
     );
 }
